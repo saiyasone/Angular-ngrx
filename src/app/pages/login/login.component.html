@@ -1,0 +1,39 @@
+<div class="login-page">
+  <div class="card">
+    <div class="card-header">
+      <h4>Login Form</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <div class="form-group pb-2">
+          <label for="email" class="form-label">Email</label>
+          <input
+            formControlName="email"
+            [ngClass]="{
+              'is-invalid':
+                f['email'].errors && (f['email'].touched || f['email'].dirty)
+            }"
+            type="email"
+            class="form-control"
+            placeholder="Email"
+          />
+        </div>
+        <div class="form-group pb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            formControlName="password"
+            [ngClass]="{
+              'is-invalid':
+                f['password'].errors &&
+                (f['password'].touched || f['password'].dirty)
+            }"
+            type="password"
+            class="form-control"
+            placeholder="Password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">login</button>
+      </form>
+    </div>
+  </div>
+</div>

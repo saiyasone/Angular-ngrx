@@ -1,0 +1,58 @@
+<!-- ======= COUNTER SECTION ======= -->
+<section class="counter-section mb-5">
+  <div class="card">
+    <div class="card-header text-center">Counter</div>
+    <div class="card-body">
+      <h4 class="text-center">
+        Counter with Async : {{ counter$ | async | number }}
+      </h4>
+      <h4 class="text-center">Counter : {{ counter | number }}</h4>
+
+      <div class="mt-4 d-flex gap-2 justify-content-center">
+        <button (click)="onIncrease()" class="btn btn-primary">increase</button>
+        <button (click)="onDecrease()" class="btn btn-danger">decrease</button>
+        <button (click)="onReset()" class="btn btn-warning">reset</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TODO SECTION ======= -->
+<section class="todo-section mb-4">
+  <div class="card">
+    <div class="card-header text-center">Todo App</div>
+
+    <div class="card-body">
+      <form (ngSubmit)="submitTodo()">
+        <div class="form-group pb-2">
+          <label for="" class="form-label">Title</label>
+          <input
+            [(ngModel)]="title"
+            name="title"
+            type="text"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group mt-2">
+          <button type="submit" class="btn btn-primary">submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card-footer">
+      <ul class="list-group">
+        <ng-container *ngFor="let todo of todos$ | async; let i = index">
+          <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+              <span (click)="handleData(todo)">
+                {{ i + 1 }}. {{ todo.title }}</span
+              >
+              <span (click)="delTodo(todo.id)" class="btn btn-danger">x</span>
+            </div>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</section>

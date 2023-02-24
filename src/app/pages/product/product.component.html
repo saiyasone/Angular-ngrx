@@ -1,0 +1,59 @@
+<div class="card">
+  <div class="card-header mb-2">
+    <div class="d-flex justify-content-between">
+      <h3>All Products</h3>
+      <h3>TotalItems: {{ totalItems | number }}</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-7">
+        <div class="row">
+          <ng-container *ngIf="!(loading$ | async); else loadingTemplate">
+            <div *ngFor="let item of products" class="col-lg-4 col-md-6 pb-3">
+              <div class="border-1">
+                <img [src]="item.url" [alt]="item.title" />
+                <div class="text">
+                  <h5 class="wrapp">
+                    {{ item.title }}
+                  </h5>
+
+                  <button
+                    (click)="addCart(item)"
+                    [style.width]="'100%'"
+                    class="mt-2 btn btn-primary"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-template #loadingTemplate>
+            <div class="text-center">
+              <h2>Loading...</h2>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="ms-3">
+          <ul class="list-group">
+            <li
+              *ngFor="let item of cartItems; let i = index"
+              class="list-item mb-2"
+            >
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="wrapp">
+                  x({{ item.qty | number }}) {{ item.name }}
+                </div>
+                <span (click)="delCart(item.id)" class="btn btn-danger">x</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

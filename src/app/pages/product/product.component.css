@@ -1,0 +1,22 @@
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.border-1 {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.text {
+  padding: 1rem;
+}
+.wrapp {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
