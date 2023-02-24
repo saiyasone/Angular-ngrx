@@ -1,6 +1,5 @@
 import { createSelector } from '@ngrx/store';
 import { AppState } from '../index.store';
-import { todoState } from './todo.reducer';
 
 const selectorFeature = (state: AppState) => state.todo;
 

@@ -1,18 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { Photo } from '../../models/photo.model';
+import { Cart } from '../../models/cart.model';
 import * as cartActions from './cart.action';
-
-export interface Cart {
-  total: number;
-  cartItems: CartItem[];
-  photo: Photo[];
-}
-export interface CartItem {
-  id: number;
-  name: string;
-  img?: string;
-  qty: number;
-}
 
 const initializeCart: Cart = {
   cartItems: [],

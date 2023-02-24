@@ -6,10 +6,10 @@ import * as productActions from '../../store/product/product.action';
 import * as productSelector from '../../store/product/product.selector';
 import { Photo } from '../../models/photo.model';
 import { ProductService } from '../../services/product.service';
-import { Cart, CartItem } from '../../store/cart/cart.reducer';
 
 import { ProductState } from '../../store/product/product.reducer';
 import { map, Observable } from 'rxjs';
+import { Cart, CartItem } from '../../models/cart.model';
 
 @Component({
   selector: 'app-product',
@@ -23,7 +23,8 @@ export class ProductComponent implements OnInit {
   loading$: Observable<boolean>;
   constructor(
     private productService: ProductService,
-    private store: Store<{ cart: Cart; product: ProductState }>
+    // private store: Store<{ cart: Cart; product: ProductState }>
+    private store: Store<{ product: ProductState }>
   ) {}
 
   ngOnInit() {

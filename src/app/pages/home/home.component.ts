@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 import { map, Observable } from 'rxjs';
+import { todoItemState, todoState } from '../../models/todo.model';
 
 // counter store
 import * as counterActions from '../../store/counter/counter.action';
@@ -10,7 +11,6 @@ import * as counterSelector from '../../store/counter/counter.selector';
 
 // todo store
 import * as todoActions from '../../store/todo/todo.action';
-import { todoItemState, todoState } from '../../store/todo/todo.reducer';
 import * as todoSelectors from '../../store/todo/todo.selector';
 
 @Component({

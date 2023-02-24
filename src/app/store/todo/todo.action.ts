@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { todoItemState } from './todo.reducer';
+import { todoItemState } from '../../models/todo.model';
 
 export const ADD_TODO = createAction(
   '[ADD_TODO] add todo',

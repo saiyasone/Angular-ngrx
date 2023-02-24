@@ -1,9 +1,14 @@
+// reducers
 import { counterReducer } from '../store/counter/counter.reducer';
 import { authReducer, AuthResponseState } from './auth/auth.reducer';
-import { Cart, cartReducer } from './cart/cart.reducer';
+import { cartReducer } from './cart/cart.reducer';
 import { counterState } from './counter/counter.reducer';
 import { ProductReducer, ProductState } from './product/product.reducer';
-import { todoReducer, todoState } from './todo/todo.reducer';
+import { todoReducer } from './todo/todo.reducer';
+
+// states
+import { Cart } from '../models/cart.model';
+import { todoState } from '../models/todo.model';
 
 export interface AppState {
   counter: counterState;
